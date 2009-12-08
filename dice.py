@@ -5,7 +5,7 @@ import random
 class Dice:
 
 	def __init__(self):
-		self.throws = []
+		pass
 
 	def roll(self, line):
 
