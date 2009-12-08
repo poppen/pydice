@@ -1,4 +1,13 @@
 #!-*- conding:utf-8 -*-
+
+""" Python module to simulate die rolls
+
+Original library is Games::Dice written in Perl.
+"""
+
+__author__ =  'Shinsuke Matsui'
+__version__=  '0.0.1'
+
 import re
 import random
 
@@ -8,6 +17,7 @@ class Dice:
 		pass
 
 	def roll(self, line):
+		"""Return sum of rolls"""
 
 		prog = re.compile(r"""
 			^                 # beginning of line
@@ -68,6 +78,7 @@ class Dice:
 		return result
 
 	def roll_list(self, dice_string):
+		"""Return rolls as list"""
 
 		prog = re.compile(r"""
 			^       # beginning of line
