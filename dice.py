@@ -36,5 +36,8 @@ class Dice:
 		else:
 			type = int(type)
 
+		results = []
 		for cnt in range(num):
-			self.throws.append(random.randint(1,type))
+			results.append(random.randint(1,type))
+
+		return results
