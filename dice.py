@@ -8,8 +8,6 @@ class Dice:
 		self.throws = []
 
 	def roll_array(self, dice_string):
-		if len(dice_string) == 0:
-			return
 
 		prog = re.compile(r"""
 			^       # beginning of line
@@ -23,6 +21,8 @@ class Dice:
 		""", re.VERBOSE)
 
 		match = prog.match(dice_string)
+		if match == None:
+			return
 
 		num = match.group(1)
 		if num:
