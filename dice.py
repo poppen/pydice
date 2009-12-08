@@ -7,7 +7,7 @@ class Dice:
 	def __init__(self):
 		self.throws = []
 
-	def roll_array(self, dice_string):
+	def roll_list(self, dice_string):
 
 		prog = re.compile(r"""
 			^       # beginning of line
