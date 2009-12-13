@@ -33,7 +33,6 @@ class TestDiceClass(unittest.TestCase):
     def testNone_roll(self):
         self.assertEqual(None, self.dice.roll("aaaa"))
 
-
     def testPlus_roll(self):
         result = self.dice.roll("1d100+1")
         assert(2 <= result and result <= 101)
