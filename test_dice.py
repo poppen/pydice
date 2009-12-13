@@ -16,6 +16,9 @@ class TestDiceClass(unittest.TestCase):
     def testLen_roll_list(self):
         self.assertEqual(100, len(self.roll_list))
 
+    def testNone_roll_list(self):
+        self.assertEqual(None, self.dice.roll_list("aaaa"))
+
     def testNumber_roll_list(self):
         for member in self.roll_list:
             assert(1 <= member and member <= 100)
@@ -23,6 +26,9 @@ class TestDiceClass(unittest.TestCase):
     def testSimple_roll(self):
         result = self.dice.roll("1d100")
         assert(1 <= result and result <= 100)
+
+    def testNone_roll(self):
+        self.assertEqual(None, self.dice.roll("aaaa"))
 
     def testAdd_roll(self):
         result = self.dice.roll("1d100+1")
