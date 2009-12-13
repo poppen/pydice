@@ -41,6 +41,10 @@ class TestDiceClass(unittest.TestCase):
         assert(2 <= result and result <= 200)
         assert(result % 2 == 0)
 
+        result = self.dice.roll("1d100x2")
+        assert(2 <= result and result <= 200)
+        assert(result % 2 == 0)
+
     def testDiv_roll(self):
         result = self.dice.roll("1d100/2")
         assert(1 <= result and result <= 50)
