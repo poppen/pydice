@@ -74,8 +74,8 @@ class Dice:
             result *= offset
 
         if sign == '/':
-            result /= offset
-            result = int(result)
+            result /= float(offset)
+            result = int(round(result))
 
         return result
 
