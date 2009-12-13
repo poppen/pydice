@@ -1,4 +1,4 @@
-#!-*- conding:utf-8 -*-
+# -*- coding: utf-8 -*-
 
 """ Python module to simulate die rolls
 
