@@ -43,11 +43,11 @@ class Dice:
         dice_string = match.group(1)
 
         sign = match.group(2)
-        if sign != None:
+        if sign:
             sign = sign.lower()
 
         offset = match.group(3)
-        if offset != None:
+        if offset:
             offset = int(offset)
 
         throws = self.roll_list(dice_string)
