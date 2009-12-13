@@ -67,5 +67,12 @@ class TestDiceClass(unittest.TestCase):
     def testDiv2_roll(self):
         self.assertEqual(75, self.dice.roll("2d100/2", [100,50]))
 
+    def testDiv3_roll(self):
+        self.assertEqual(1, self.dice.roll("1d4/2", [1]))
+
+    def testBest_roll(self):
+        self.assertEqual(100, self.dice.roll("3d100b1", [25, 100,50]))
+        self.assertEqual(150, self.dice.roll("3d100b2", [25, 100,50]))
+
 if __name__ == "__main__":
     unittest.main()
