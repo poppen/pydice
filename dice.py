@@ -16,7 +16,7 @@ class Dice:
     def __init__(self):
         pass
 
-    def roll(self, line):
+    def roll(self, line, throws = []):
         """Return sum of rolls"""
 
         prog = re.compile(r"""
@@ -50,7 +50,9 @@ class Dice:
         if offset:
             offset = int(offset)
 
-        throws = self.roll_list(dice_string)
+        if len(throws) == 0:
+            throws = self.roll_list(dice_string)
+
         if len(throws) == 0:
             return
 
