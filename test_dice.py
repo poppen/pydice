@@ -26,21 +26,27 @@ class TestDiceClass(unittest.TestCase):
     def testSimple_roll(self):
         result = self.dice.roll("1d100")
         assert(1 <= result and result <= 100)
+    
+    def testSimple2_roll(self):
+        self.assertEqual(150, self.dice.roll("2d100", [100,50]))
 
     def testNone_roll(self):
         self.assertEqual(None, self.dice.roll("aaaa"))
 
-    def testAdd_roll(self):
-        result = self.dice.roll("1d100+1")
-        assert(2 <= result and result <= 101)
 
     def testPlus_roll(self):
         result = self.dice.roll("1d100+1")
         assert(2 <= result and result <= 101)
 
+    def testPlus2_roll(self):
+        self.assertEqual(151, self.dice.roll("2d100+1", [100,50]))
+
     def testMinus_roll(self):
         result = self.dice.roll("1d100-1")
         assert(0 <= result and result <= 99)
+
+    def testMinus2_roll(self):
+        self.assertEqual(149, self.dice.roll("2d100-1", [100,50]))
 
     def testMulti_roll(self):
         result = self.dice.roll("1d100*2")
@@ -51,9 +57,16 @@ class TestDiceClass(unittest.TestCase):
         assert(2 <= result and result <= 200)
         assert(result % 2 == 0)
 
+    def testMulti2_roll(self):
+        self.assertEqual(300, self.dice.roll("2d100*2", [100,50]))
+        self.assertEqual(300, self.dice.roll("2d100x2", [100,50]))
+
     def testDiv_roll(self):
         result = self.dice.roll("1d100/2")
         assert(1 <= result and result <= 50)
+
+    def testDiv2_roll(self):
+        self.assertEqual(75, self.dice.roll("2d100/2", [100,50]))
 
 if __name__ == "__main__":
     unittest.main()
